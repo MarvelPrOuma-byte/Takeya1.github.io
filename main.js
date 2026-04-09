@@ -123,10 +123,10 @@ if (contactForm) {
                 alert('Thank you for your message! I\'ll get back to you soon.');
                 this.reset();
             } else {
-                alert('Oops! There was a problem sending your message. Please try again or contact me directly at lestherouma@gmail.com');
+                alert('Oops! There was a problem sending your message. Please try again or contact me directly at marvelprouma@icloud.com');
             }
         } catch (error) {
-            alert('Oops! There was a problem sending your message. Please try again or contact me directly at lestherouma@gmail.com');
+            alert('Oops! There was a problem sending your message. Please try again or contact me directly at marvelprouma@icloud.com');
         } finally {
             // Reset button
             submitButton.innerHTML = originalText;
