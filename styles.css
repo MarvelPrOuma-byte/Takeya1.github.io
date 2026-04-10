@@ -1316,4 +1316,137 @@ footer {
 @keyframes blink {
     0%, 50% { opacity: 1; }
     51%, 100% { opacity: 0; }
+/* Neuron Animation - Firing Neuron */
+.neuron-animation-container {
+    position: absolute;
+    top: 50%;
+    right: -80px;
+    transform: translateY(-50%);
+    z-index: 5;
+    opacity: 0.8;
 }
+
+.neuron-svg {
+    filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.4));
+}
+
+.soma {
+    fill: var(--accent-bio);
+    stroke: var(--accent-bio);
+    stroke-width: 2;
+    animation: neuronPulse 2.5s ease-in-out infinite;
+}
+
+.axon {
+    fill: none;
+    stroke: var(--accent-bio);
+    stroke-width: 2.5;
+    animation: axonFire 2.5s ease-in-out infinite;
+}
+
+.axon-terminal {
+    fill: var(--accent-bio);
+    animation: terminalFire 2.5s ease-in-out infinite;
+}
+
+.dendrite {
+    fill: none;
+    stroke: var(--accent-bio);
+    stroke-width: 2;
+    animation: dendriteFire 2.5s ease-in-out infinite;
+}
+
+.dendrite-1 { animation-delay: 0.1s; }
+.dendrite-2 { animation-delay: 0s; }
+.dendrite-3 { animation-delay: 0.1s; }
+
+.firing-pulse {
+    fill: none;
+    stroke: var(--accent-bio);
+    stroke-width: 1.5;
+    opacity: 0;
+    animation: neuronFire 2.5s ease-out infinite;
+}
+
+/* Neuron Firing Animations */
+@keyframes neuronPulse {
+    0%, 100% {
+        r: 25;
+        opacity: 0.6;
+        filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.4));
+    }
+    50% {
+        r: 28;
+        opacity: 1;
+        filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.8));
+    }
+}
+
+@keyframes axonFire {
+    0%, 10% {
+        stroke-width: 2.5;
+        opacity: 0.5;
+        stroke: var(--accent-bio);
+    }
+    30%, 100% {
+        stroke-width: 3;
+        opacity: 1;
+        stroke: var(--accent-bio);
+        filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.8));
+    }
+}
+
+@keyframes terminalFire {
+    0%, 20% {
+        r: 8;
+        opacity: 0.5;
+    }
+    40%, 100% {
+        r: 10;
+        opacity: 1;
+        filter: drop-shadow(0 0 12px rgba(6, 182, 212, 0.9));
+    }
+}
+
+@keyframes dendriteFire {
+    0%, 5% {
+        stroke-width: 2;
+        opacity: 0.3;
+    }
+    15%, 80% {
+        stroke-width: 2.5;
+        opacity: 0.8;
+        filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.7));
+    }
+    100% {
+        stroke-width: 2;
+        opacity: 0.3;
+    }
+}
+
+@keyframes neuronFire {
+    0% {
+        r: 25;
+        opacity: 1;
+        stroke-width: 1.5;
+    }
+    100% {
+        r: 45;
+        opacity: 0;
+        stroke-width: 0.5;
+    }
+}
+
+/* Responsive adjustment for neuron */
+@media (max-width: 1200px) {
+    .neuron-animation-container {
+        right: -60px;
+        top: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .neuron-animation-container {
+        display: none;
+    }
+}}
