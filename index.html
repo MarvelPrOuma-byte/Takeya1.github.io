@@ -168,6 +168,27 @@
                             <div class="dna-card-subtitle">Cool isn't it?</div>
                         </div>
                     </div>
+                    <!-- Neuron Animation -->
+<div class="neuron-animation-container">
+    <svg class="neuron-svg" viewBox="0 0 200 200" width="200" height="200">
+        <!-- Soma (cell body) -->
+        <circle class="soma" cx="100" cy="100" r="25" />
+        
+        <!-- Axon -->
+        <path class="axon" d="M 100 125 Q 120 150, 100 175" stroke-linecap="round" />
+        
+        <!-- Axon terminal -->
+        <circle class="axon-terminal" cx="100" cy="175" r="8" />
+        
+        <!-- Dendrites -->
+        <path class="dendrite dendrite-1" d="M 75 75 Q 50 40, 30 20" stroke-linecap="round" />
+        <path class="dendrite dendrite-2" d="M 100 75 Q 100 40, 100 10" stroke-linecap="round" />
+        <path class="dendrite dendrite-3" d="M 125 75 Q 150 40, 170 20" stroke-linecap="round" />
+        
+        <!-- Firing effects -->
+        <circle class="firing-pulse" cx="100" cy="100" r="25" />
+    </svg>
+</div>
                     <div class="dna-sequence">
                         <span class="base base-a">I</span>
                         <span class="base base-t">L</span>
