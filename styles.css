@@ -342,6 +342,15 @@ nav.scrolled {
     box-shadow: var(--glow-bio);
 }
 
+.btn-primary:disabled {
+    background: linear-gradient(135deg, var(--accent-bio), var(--accent-code));
+    color: white;
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
 .btn-secondary {
     background: transparent;
     border: 1px solid var(--glass-border);
