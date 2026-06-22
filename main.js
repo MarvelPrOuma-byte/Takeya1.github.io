@@ -49,6 +49,44 @@ function drawDNAHelix() {
     animationId = requestAnimationFrame(drawDNAHelix);
 }
 
+// Mouse Follower Cursor
+const mouseFollower = document.createElement('div');
+mouseFollower.className = 'mouse-follower';
+document.body.appendChild(mouseFollower);
+
+let mouseX = 0;
+let mouseY = 0;
+let followerX = 0;
+let followerY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+function updateMouseFollower() {
+    followerX += (mouseX - followerX) * 0.2;
+    followerY += (mouseY - followerY) * 0.2;
+    
+    mouseFollower.style.left = followerX + 'px';
+    mouseFollower.style.top = followerY + 'px';
+    
+    requestAnimationFrame(updateMouseFollower);
+}
+
+updateMouseFollower();
+
+// Floating Name Animation
+const nameElement = document.querySelector('.hero h1');
+if (nameElement) {
+    let floatTime = 0;
+    setInterval(() => {
+        floatTime += 0.05;
+        const floatY = Math.sin(floatTime) * 10;
+        nameElement.style.transform = `translateY(${floatY}px)`;
+    }, 50);
+}
+
 // Navigation scroll effect
 const navbar = document.getElementById('navbar');
 if (navbar) {
@@ -185,3 +223,27 @@ function setActiveNavLink() {
 }
 
 setActiveNavLink();
+
+// Filter blog posts
+const filterBtns = document.querySelectorAll('.filter-btn');
+const blogCards = document.querySelectorAll('.blog-card');
+
+if (filterBtns.length > 0) {
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const filter = btn.dataset.filter;
+            blogCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = 'block';
+                    setTimeout(() => card.classList.add('visible'), 10);
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('visible');
+                }
+            });
+        });
+    });
+}

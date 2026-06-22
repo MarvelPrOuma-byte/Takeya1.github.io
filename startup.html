@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Loading | Marvel Ouma</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1a2f5a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+
+        .startup-container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .startup-logo {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .startup-title {
+            font-size: 2.5rem;
+            color: #f1f5f9;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #06b6d4 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .startup-subtitle {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 3rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .neuron-loader {
+            width: 200px;
+            height: 200px;
+            margin: 2rem auto;
+            position: relative;
+        }
+
+        .neuron-svg {
+            filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.3));
+        }
+
+        .soma {
+            fill: #06b6d4;
+            animation: pulse-soma 2s infinite;
+        }
+
+        .dendrite {
+            stroke: #a855f7;
+            stroke-width: 2;
+            fill: none;
+            animation: pulse-dendrite 2s infinite;
+        }
+
+        .dendrite-1 { animation-delay: 0s; }
+        .dendrite-2 { animation-delay: 0.2s; }
+        .dendrite-3 { animation-delay: 0.4s; }
+
+        .axon {
+            stroke: #06b6d4;
+            stroke-width: 2;
+            fill: none;
+            animation: pulse-axon 2s infinite;
+        }
+
+        .axon-terminal {
+            fill: #22c55e;
+            animation: pulse-terminal 2s infinite;
+        }
+
+        .firing-pulse {
+            stroke: #06b6d4;
+            stroke-width: 2;
+            fill: none;
+            animation: firing 2s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+
+        @keyframes pulse-soma {
+            0%, 100% { r: 25; opacity: 1; }
+            50% { r: 30; opacity: 0.8; }
+        }
+
+        @keyframes pulse-dendrite {
+            0%, 100% { opacity: 0.4; stroke-width: 2; }
+            50% { opacity: 1; stroke-width: 3; }
+        }
+
+        @keyframes pulse-axon {
+            0%, 100% { opacity: 0.4; stroke-width: 2; }
+            50% { opacity: 1; stroke-width: 3; }
+        }
+
+        @keyframes pulse-terminal {
+            0%, 100% { r: 8; opacity: 0.5; }
+            50% { r: 12; opacity: 1; }
+        }
+
+        @keyframes firing {
+            0%, 100% { r: 25; opacity: 0; }
+            50% { r: 40; opacity: 0.5; }
+        }
+
+        .loading-text {
+            font-family: 'JetBrains Mono', monospace;
+            color: #06b6d4;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-top: 2rem;
+        }
+
+        .loading-text span {
+            display: inline-block;
+            animation: blink 0.6s infinite;
+        }
+
+        .loading-text span:nth-child(1) { animation-delay: 0s; }
+        .loading-text span:nth-child(2) { animation-delay: 0.2s; }
+        .loading-text span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes blink {
+            0%, 60%, 100% { opacity: 0.3; }
+            30% { opacity: 1; }
+        }
+
+        .progress-container {
+            width: 300px;
+            height: 4px;
+            background: rgba(148, 163, 184, 0.2);
+            border-radius: 2px;
+            margin: 2rem auto;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #06b6d4, #a855f7, #22c55e);
+            border-radius: 2px;
+            animation: progress 3s ease-in-out forwards;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        .redirect-message {
+            margin-top: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="startup-container">
+        <div class="startup-logo">
+            <i class="fas fa-dna"></i>
+        </div>
+        <h1 class="startup-title">MARVEL</h1>
+        <p class="startup-subtitle">Initializing cognitive laboratory...</p>
+        
+        <div class="neuron-loader">
+            <svg class="neuron-svg" viewBox="0 0 200 200" width="200" height="200">
+                <!-- Soma (cell body) -->
+                <circle class="soma" cx="100" cy="100" r="25" />
+                
+                <!-- Axon -->
+                <path class="axon" d="M 100 125 Q 120 150, 100 175" stroke-linecap="round" />
+                
+                <!-- Axon terminal -->
+                <circle class="axon-terminal" cx="100" cy="175" r="8" />
+                
+                <!-- Dendrites -->
+                <path class="dendrite dendrite-1" d="M 75 75 Q 50 40, 30 20" stroke-linecap="round" />
+                <path class="dendrite dendrite-2" d="M 100 75 Q 100 40, 100 10" stroke-linecap="round" />
+                <path class="dendrite dendrite-3" d="M 125 75 Q 150 40, 170 20" stroke-linecap="round" />
+                
+                <!-- Firing effects -->
+                <circle class="firing-pulse" cx="100" cy="100" r="25" />
+            </svg>
+        </div>
+
+        <div class="loading-text">
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+
+        <p class="redirect-message">Redirecting to home...</p>
+    </div>
+
+    <script>
+        // Redirect to home after 4 seconds
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 4000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Marvel Ouma</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-grid"></div>
+    <canvas id="dna-canvas"></canvas>
+    <div class="particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: -3s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: -6s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: -9s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: -12s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: -15s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: -2s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: -7s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: -11s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-dna"></i></div>
+                <span>MARVEL </span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="library.html">Library</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="nav-cta">Let's Talk</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-menu-close" id="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="library.html">Library</a>
+        <a href="blog.html">Blog</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Blog Section -->
+    <section class="page-header section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Thoughts & Ideas</div>
+                <h2 class="section-title">My Blog</h2>
+                <p class="section-subtitle">
+                    Exploring the intersections of neuroscience, reading, mental development, and the cosmic wonders of space.
+                </p>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid">
+                <!-- Featured Post -->
+                <article class="blog-card featured fade-in">
+                    <div class="blog-image">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">June 22, 2026</span>
+                            <span class="blog-category">Neuroscience</span>
+                        </div>
+                        <h3>Neuroplasticity: The Brain's Superpower</h3>
+                        <p class="blog-excerpt">
+                            Our brains are not fixed. This revolutionary understanding of neuroplasticity shows us that through deliberate practice, learning, and habit formation, we can literally rewire our neural pathways. Discover how understanding this concept changed my approach to learning and personal growth.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="tag">Neuroscience</span>
+                            <span class="tag">Learning</span>
+                            <span class="tag">Personal Growth</span>
+                        </div>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Regular Posts -->
+                <article class="blog-card fade-in">
+                    <div class="blog-image">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">June 15, 2026</span>
+                            <span class="blog-category">Reading</span>
+                        </div>
+                        <h3>Why I Read: A Love Letter to Books</h3>
+                        <p class="blog-excerpt">
+                            Books are windows into other minds, other worlds, and other ways of thinking. Explore why reading is more than just an escape—it's a fundamental tool for intellectual development.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="tag">Reading</span>
+                            <span class="tag">Books</span>
+                        </div>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card fade-in">
+                    <div class="blog-image">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">June 8, 2026</span>
+                            <span class="blog-category">Space Science</span>
+                        </div>
+                        <h3>The Cosmos Within: Exploring Astrophysics</h3>
+                        <p class="blog-excerpt">
+                            From black holes to the Big Bang, the universe presents some of the most mind-bending puzzles. Join me as I explore the fascinating field of astrophysics and our place in the cosmos.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="tag">Astrophysics</span>
+                            <span class="tag">Space</span>
+                            <span class="tag">Universe</span>
+                        </div>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card fade-in">
+                    <div class="blog-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">June 1, 2026</span>
+                            <span class="blog-category">Habits</span>
+                        </div>
+                        <h3>The Power of Small Habits: Building Excellence</h3>
+                        <p class="blog-excerpt">
+                            Inspired by Atomic Habits, I explore how tiny, consistent improvements compound over time to create remarkable results. Learn the habit loop and how to apply it to your life.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="tag">Habits</span>
+                            <span class="tag">Growth</span>
+                            <span class="tag">Productivity</span>
+                        </div>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card fade-in">
+                    <div class="blog-image">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">May 25, 2026</span>
+                            <span class="blog-category">Thinking</span>
+                        </div>
+                        <h3>Cognitive Biases: Understanding How We Think</h3>
+                        <p class="blog-excerpt">
+                            Our minds use shortcuts called heuristics, but these shortcuts can lead us astray. Explore common cognitive biases and how understanding them can improve decision-making.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="tag">Psychology</span>
+                            <span class="tag">Thinking</span>
+                            <span class="tag">Decision Making</span>
+                        </div>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card fade-in">
+                    <div class="blog-image">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">May 18, 2026</span>
+                            <span class="blog-category">Mental Math</span>
+                        </div>
+                        <h3>Mental Math Mastery: Training Your Brain</h3>
+                        <p class="blog-excerpt">
+                            Mental math isn't just about speed—it's about training your brain to see patterns and relationships in numbers. Discover techniques and why this practice sharpens your mind.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="tag">Mental Math</span>
+                            <span class="tag">Brain Training</span>
+                        </div>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">&copy; 2026 Marvel Ouma.</p>
+            <div class="footer-social">
+                <a href="mailto:marvelprouma@icloud.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://linkedin.com/in/marvel-ouma-825b25291" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/MarvelPrOuma-byte" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
