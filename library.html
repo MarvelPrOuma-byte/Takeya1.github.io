@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library | Marvel Ouma</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-grid"></div>
+    <canvas id="dna-canvas"></canvas>
+    <div class="particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: -3s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: -6s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: -9s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: -12s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: -15s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: -2s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: -7s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: -11s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-dna"></i></div>
+                <span>MARVEL </span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="library.html" class="active">Library</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="nav-cta">Let's Talk</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-menu-close" id="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="library.html">Library</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Library Section -->
+    <section class="page-header section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Knowledge Collection</div>
+                <h2 class="section-title">My Reading Library</h2>
+                <p class="section-subtitle">
+                    "Reading is to the mind what exercise is to the body." — <b>Joseph Addison</b><br>
+                    A collection of books that have shaped my thinking in neuroscience, psychology, space science, and beyond.
+                </p>
+            </div>
+
+            <!-- Library Filters -->
+            <div class="library-filters fade-in">
+                <button class="filter-btn active" data-filter="all">All Books</button>
+                <button class="filter-btn" data-filter="neuroscience">Neuroscience</button>
+                <button class="filter-btn" data-filter="psychology">Psychology</button>
+                <button class="filter-btn" data-filter="space">Space Science</button>
+                <button class="filter-btn" data-filter="habit">Habits & Growth</button>
+                <button class="filter-btn" data-filter="philosophy">Philosophy</button>
+            </div>
+
+            <!-- Books Grid -->
+            <div class="library-grid">
+                <!-- Neuroscience Books -->
+                <div class="book-card fade-in" data-category="neuroscience">
+                    <div class="book-header">
+                        <i class="fas fa-brain book-icon"></i>
+                        <span class="category-badge">Neuroscience</span>
+                    </div>
+                    <h3>The Brain That Changes Itself</h3>
+                    <p class="book-author">by Norman Doidge</p>
+                    <p class="book-description">Explores neuroplasticity and how the brain can rewire itself through practice and experience.</p>
+                    <div class="book-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                    </div>
+                    <p class="book-status">Currently Reading</p>
+                </div>
+
+                <div class="book-card fade-in" data-category="neuroscience">
+                    <div class="book-header">
+                        <i class="fas fa-brain book-icon"></i>
+                        <span class="category-badge">Neuroscience</span>
+                    </div>
+                    <h3>Thinking, Fast and Slow</h3>
+                    <p class="book-author">by Daniel Kahneman</p>
+                    <p class="book-description">Reveals how our minds work through cognitive biases and dual-process thinking.</p>
+                    <div class="book-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="book-status completed">Completed</p>
+                </div>
+
+                <div class="book-card fade-in" data-category="neuroscience">
+                    <div class="book-header">
+                        <i class="fas fa-brain book-icon"></i>
+                        <span class="category-badge">Neuroscience</span>
+                    </div>
+                    <h3>Neuroscience for Beginners</h3>
+                    <p class="book-author">by R. Isley</p>
+                    <p class="book-description">An accessible introduction to the fundamentals of neuroscience and brain function.</p>
+                    <div class="book-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="book-status completed">Completed</p>
+                </div>
+
+                <!-- Psychology Books -->
+                <div class="book-card fade-in" data-category="psychology">
+                    <div class="book-header">
+                        <i class="fas fa-lightbulb book-icon"></i>
+                        <span class="category-badge">Psychology</span>
+                    </div>
+                    <h3>Man's Search for Meaning</h3>
+                    <p class="book-author">by Viktor Frankl</p>
+                    <p class="book-description">A profound exploration of finding purpose and meaning even in life's darkest moments.</p>
+                    <div class="book-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="book-status completed">Completed</p>
+                </div>
+
+                <div class="book-card fade-in" data-category="psychology">
+                    <div class="book-header">
+                        <i class="fas fa-lightbulb book-icon"></i>
+                        <span class="category-badge">Psychology</span>
+                    </div>
+                    <h3>Emotional Intelligence</h3>
+                    <p class="book-author">by Daniel Goleman</p>
+                    <p class="book-description">How emotional awareness and management influence success and relationships.</p>
+                    <div class="book-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="book-status">Currently Reading</p>
+                </div>
+
+                <!-- Space Science Books -->
+                <div class="book-card fade-in" data-category="space">
+                    <div class="book-header">
+                        <i class="fas fa-rocket book-icon"></i>
+                        <span class="category-badge">Space Science</span>
+                    </div>
+                    <h3>Astrophysics for People in a Hurry</h3>
+                    <p class="book-author">by Neil deGrasse Tyson</p>
+                    <p class="book-description">A quick and engaging tour of the universe and our place in the cosmos.</p>
+                    <div class="book-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                    </div>
+                    <p class="book-status completed">Completed</p>
+                </div>
+
+                <div class="book-card fade-in" data-category="space">
+                    <div class="book-header">
+                        <i class="fas fa-rocket book-icon"></i>
+                        <span class="category-badge">Space Science</span>
+                    </div>
+                    <h3>A Brief History of Time</h3>
+                    <p class="book-author">by Stephen Hawking</p>
+                    <p class="book-description">Explores black holes, the Big Bang, and the nature of time itself.</p>
+                    <div class="book-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="book-status">Currently Reading</p>
+                </div>
+
+                <!-- Habits & Growth Books -->
+                <div class="book-card fade-in" data-category="habit">
+                    <div class="book-header">
+                        <i class="fas fa-chart-line book-icon"></i>
+                        <span class="category-badge">Habits</span>
+                    </div>
+                    <h3>Atomic Habits</h3>
+                    <p class="book-author">by James Clear</p>
+                    <p class="book-description">How tiny changes compound into remarkable results through habit formation.</p>
+                    <div class="book-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="book-status completed">Completed</p>
+                </div>
+
+                <div class="book-card fade-in" data-category="habit">
+                    <div class="book-header">
+                        <i class="fas fa-chart-line book-icon"></i>
+                        <span class="category-badge">Habits</span>
+                    </div>
+                    <h3>The Power of Habit</h3>
+                    <p class="book-author">by Charles Duhigg</p>
+                    <p class="book-description">Understanding the habit loop and how to change behaviors for life transformation.</p>
+                    <div class="book-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="book-status">Currently Reading</p>
+                </div>
+
+                <!-- Philosophy Books -->
+                <div class="book-card fade-in" data-category="philosophy">
+                    <div class="book-header">
+                        <i class="fas fa-scroll book-icon"></i>
+                        <span class="category-badge">Philosophy</span>
+                    </div>
+                    <h3>The Desire of Ages</h3>
+                    <p class="book-author">by Ellen White</p>
+                    <p class="book-description">A spiritual and philosophical exploration of timeless wisdom and life principles.</p>
+                    <div class="book-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="book-status">Currently Reading</p>
+                </div>
+
+                <div class="book-card fade-in" data-category="philosophy">
+                    <div class="book-header">
+                        <i class="fas fa-scroll book-icon"></i>
+                        <span class="category-badge">Philosophy</span>
+                    </div>
+                    <h3>Meditations</h3>
+                    <p class="book-author">by Marcus Aurelius</p>
+                    <p class="book-description">Ancient stoic wisdom on virtue, resilience, and finding peace within.</p>
+                    <div class="book-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                    </div>
+                    <p class="book-status completed">Completed</p>
+                </div>
+            </div>
+
+            <!-- Reading Statistics -->
+            <div class="library-stats fade-in">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-book"></i></div>
+                    <div class="stat-content">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Books Read</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-hourglass-end"></i></div>
+                    <div class="stat-content">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Currently Reading</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-bookmark"></i></div>
+                    <div class="stat-content">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Wishlist</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reading Goals -->
+            <div class="reading-goals fade-in">
+                <h3>2026 Reading Goals</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Read 25 books across diverse genres</li>
+                    <li><i class="fas fa-check-circle"></i> Write detailed book reviews for 10 books</li>
+                    <li><i class="fas fa-check-circle"></i> Explore 3 new authors</li>
+                    <li><i class="fas fa-circle-notch"></i> Complete neuroscience research through reading</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">&copy; 2026 Marvel Ouma.</p>
+            <div class="footer-social">
+                <a href="mailto:marvelprouma@icloud.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://linkedin.com/in/marvel-ouma-825b25291" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/MarvelPrOuma-byte" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
